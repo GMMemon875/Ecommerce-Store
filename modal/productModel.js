@@ -9,4 +9,4 @@ const ProductSchema = mongoose.Schema({
   textcolor: String,
 });
 
-module.exports = mongoose.Model("user", ProductSchema);
+module.exports = mongoose.Model("product", ProductSchema);
