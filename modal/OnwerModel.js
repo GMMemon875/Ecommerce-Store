@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const OnwerModel = mongoose.Schema({
-  fullname: {
+const OnwerSchema = mongoose.Schema({
+  name: {
     type: String,
     minLength: 3,
     trim: true,
@@ -16,4 +16,4 @@ const OnwerModel = mongoose.Schema({
   gstin: String,
 });
 
-module.exports = mongoose.Model("onwer", OnwerModel);
+module.exports = mongoose.model("onwer", OnwerSchema);
