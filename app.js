@@ -6,10 +6,10 @@ const onwerRouter = require("./routes/onwerRouter");
 const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
 
-app.set(`views engine`, "ejs");
-app.get(express.json());
+app.set("views engine", "ejs");
+app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.get(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/onwer", onwerRouter);
 app.use("/product", productRouter);

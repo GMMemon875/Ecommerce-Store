@@ -1,19 +1,29 @@
 const express = require("express");
 const router = express.Router();
-// const onwerModel = require("../modal/OnwerModel");
+const ownerModel = require("../modal/OnwerModel"); // Correct spelling of "OwnerModel"
+const OnwerModel = require("../modal/OnwerModel");
 
 if (process.env.NODE_ENV === "development") {
   router.post("/create", async function (req, res) {
-    // const onwer = await onwerModel.find();
-    // if (onwer.length > 0) {
-    //   return res.send("already save onwer");
-    // }
-    // res.send("create a Onwer Account");
+    let Onwer = await OnwerModel.find();
+    if (Onwer.length > 0) {
+      return res.status(400).send({ message: "Owner already exists" });
+    }
+    
+    let { fullname, email, password } = req.body;
+    let ownerCreate = await ownerModel.create({
+      fullname,
+      email,
+      password,
+    });
+
+    // Respond with the created owner object
+    res.status(201).send(ownerCreate);
   });
 }
 
 router.get("/", function (req, res) {
-  res.send("Hello World imtiaz this is a onwer route");
+  res.send("Hello World Imtiaz, this is an owner route");
 });
 
 module.exports = router;
