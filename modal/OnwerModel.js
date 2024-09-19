@@ -12,6 +12,10 @@ const OnwerSchema = mongoose.Schema({
     type: Array,
     default: [],
   },
+  cart: {
+    type: Array,
+    default: [],
+  },
   picture: String,
   gstin: String,
 });
