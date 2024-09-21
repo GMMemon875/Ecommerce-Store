@@ -5,6 +5,9 @@ const db = require("./config/mongoose-conection");
 const onwerRouter = require("./routes/onwerRouter");
 const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
+ 
+
+require("dotenv").config();
 
 app.set("views engine", "ejs");
 app.use(express.json());

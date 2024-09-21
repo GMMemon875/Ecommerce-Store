@@ -9,7 +9,6 @@ if (process.env.NODE_ENV === "development") {
     if (Onwer.length > 0) {
       return res.status(400).send({ message: "Owner already exists" });
     }
-    
     let { fullname, email, password } = req.body;
     let ownerCreate = await ownerModel.create({
       fullname,
