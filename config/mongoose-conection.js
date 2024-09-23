@@ -3,7 +3,7 @@ const config = require("config");
 
 const debr = require("debug")("development:mongoose");
 mongoose
-  .connect(`${config.get("MONGODB_URI")}/ecomurece`)
+  .connect(`${config.get("MONGODB_URI")}/Store`)
   .then(function () {
     debr("Connected to MongoDB");
   })
