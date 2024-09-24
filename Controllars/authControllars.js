@@ -41,3 +41,8 @@ module.exports.LoginUser = async function (req, res) {
     }
   });
 };
+
+module.exports.LogOutUser = function (req, res) {
+  res.cookie("token", "");
+  res.render("/");
+};
