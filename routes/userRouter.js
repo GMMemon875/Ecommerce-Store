@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const IslogedIn = require("../middlewere/IsLogedIn");
 
 const {
   registerUser,
   LoginUser,
-  LogOutUser,
+  Logout,
 } = require("../Controllars/authControllars");
 
 // router.get("/", function (req, res) {
@@ -15,6 +16,6 @@ router.post("/register", registerUser);
 
 router.post("/Login", LoginUser);
 
-router.post("/Logout", LogOutUser);
+router.get("/logout", Logout);
 
 module.exports = router;

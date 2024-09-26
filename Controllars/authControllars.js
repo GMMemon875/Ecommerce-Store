@@ -20,7 +20,7 @@ module.exports.registerUser = async function (req, res) {
 
     let token = generateToken(userCreated);
     res.cookie("token", token);
-    res.send("User created successfully");
+    res.redirect("/shop");
   } catch (err) {
     console.log(err.message);
     res.status(500).send("Server error");
@@ -35,14 +35,14 @@ module.exports.LoginUser = async function (req, res) {
     if (result === true) {
       let token = generateToken(FindEmail);
       res.cookie("token", token);
-      res.send("Login successfully");
+      res.redirect("/shop");
     } else {
       res.send("password is not valid");
     }
   });
 };
 
-module.exports.LogOutUser = function (req, res) {
+module.exports.Logout = function (req, res) {
   res.cookie("token", "");
-  res.render("/");
+  res.redirect("/");
 };

@@ -12,16 +12,17 @@
 
 const express = require("express");
 const router = express.Router();
-// const IsLogedIn = require("../middlewere/IsLogedIn");
+const IsLogedIn = require("../middlewere/IsLogedIn");
 
 // GET request for the homepage
 router.get("/", function (req, res) {
-  res.render("admin.ejs");
+  let error = req.flash("error");
+  res.render("index.ejs", { error });
 });
 
-// // POST request for the /post route with IsLogedIn middleware
-// router.get("/post", function (req, res) {
-//   res.send("shop");
-// });
+// POST request for the /post route with IsLogedIn middleware
+router.get("/shop", IsLogedIn, function (req, res) {
+  res.render("shop.ejs");
+});
 
 module.exports = router;
