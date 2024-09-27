@@ -8,7 +8,7 @@ module.exports.registerUser = async function (req, res) {
     const { fullname, email, password } = req.body;
 
     let findEmil = await userModel.findOne({ email: email });
-    if (findEmil) return res.send("email is already exsit");
+    if (findEmil) return req.flash("error", "email is already exsit");
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
 
@@ -30,14 +30,14 @@ module.exports.registerUser = async function (req, res) {
 module.exports.LoginUser = async function (req, res) {
   let { email, password } = req.body;
   let FindEmail = await userModel.findOne({ email: email });
-  if (!FindEmail) return res.send("email is Not valid");
+  if (!FindEmail) return;
   bcrypt.compare(password, FindEmail.password, function (err, result) {
     if (result === true) {
       let token = generateToken(FindEmail);
       res.cookie("token", token);
       res.redirect("/shop");
     } else {
-      res.send("password is not valid");
+      req.flash("error", "Email Or Password Incoreect");
     }
   });
 };

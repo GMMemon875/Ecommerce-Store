@@ -1,0 +1,77 @@
+/* styles.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  width: 93%;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+h3,
+h4 {
+  margin: 0 0 15px;
+}
+
+.error-message {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: #f56565;
+  color: white;
+  border-radius: 8px;
+}
+
+.highlight {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+/* Left and Right Section Styles */
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 90%;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #2563eb;
+}

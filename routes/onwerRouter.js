@@ -21,8 +21,8 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-router.get("/", function (req, res) {
-  res.send("Hello World Imtiaz, this is an owner route");
+router.get("/admin", function (req, res) {
+  res.render("createProducts.ejs");
 });
 
 module.exports = router;
