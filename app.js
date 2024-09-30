@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/onwer", onwerRouter);
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 app.use("/users", userRouter);
 
 app.listen(3000, function (err) {

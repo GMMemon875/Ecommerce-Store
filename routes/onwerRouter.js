@@ -22,7 +22,8 @@ if (process.env.NODE_ENV === "development") {
 }
 
 router.get("/admin", function (req, res) {
-  res.render("createProducts.ejs");
+  let success = req.flash("success");
+  res.render("createProducts.ejs", { success }); //flash message is not working
 });
 
 module.exports = router;
