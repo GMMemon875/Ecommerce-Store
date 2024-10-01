@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -31,18 +31,23 @@
       </div>
       <div class="w-[75%] flex flex-col gap-5 h-screen">
         <div class="flex items-start gap-5">
+          <% products.forEach(function(product){ %>
           <div class="w-60">
             <div
-              class="w-full h-52 flex items-center justify-center bg-zinc-800"
+              class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]"
             >
-              <img class="h-[12rem]" src="" alt="" />
+              <img
+                class="h-[12rem]"
+                src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                alt=""
+              />
             </div>
             <div
-              class="flex justify-between bg-red-500 items-center px-4 py-4 text-white"
+              class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
             >
               <div>
-                <h3>product.name</h3>
-                <h4>₹ product.price</h4>
+                <h3><%= product.name %></h3>
+                <h4>₹ <%= product.price %></h4>
               </div>
               <a
                 class="w-7 h-7 flex items-center justify-center rounded-full bg-white"
@@ -52,8 +57,75 @@
               </a>
             </div>
           </div>
+          <% }) %>
         </div>
-        
+      </div>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/shop.css" />
+
+    <title>Product Page</title>
+  </head>
+  <body>
+    <div class="store">Store</div>
+    <div class="container">
+      <div class="sidebar">
+        <div class="filter">
+          <p>Sort by</p>
+          <form action="/shop">
+            <select name="sortby">
+              <option value="popular">Popular</option>
+              <option value="newest">Newest</option>
+            </select>
+          </form>
+        </div>
+        <div class="navigation">
+          <a href="">New Collection</a>
+          <a href="">All Products</a>
+          <a href="">Discounted Products</a>
+        </div>
+        <div class="filter-options">
+          <a href="">Filter by :</a>
+          <a href="">Availability</a>
+          <a href="">Discount</a>
+        </div>
+      </div>
+      <div class="products">
+        <div class="product-list">
+          <% products.forEach(function(product){ %>
+          <div class="product">
+            <div
+              class="product-image-container"
+              style="background-color: <%= product.bgcolor %>"
+            >
+              <img
+                class="product-image"
+                src="data:image/jpeg;base64,<%= product.image.toString('base64')%>"
+                alt="Product Image"
+              />
+            </div>
+            <div
+              class="product-info"
+              style="background-color:<%= product.panelcolor %>color: <%= product.textcolor %>"
+            >
+              <div>
+                <h3><%= product.name %></h3>
+                <h4>₹ <%= product.price %></h4>
+              </div>
+              <a class="add-button" href="">
+                <i class="ri-add-line"></i>
+              </a>
+            </div>
+          </div>
+          <% }) %>
+        </div>
       </div>
     </div>
   </body>
