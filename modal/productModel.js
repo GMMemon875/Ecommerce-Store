@@ -5,7 +5,8 @@ const ProductSchema = mongoose.Schema({
   name: String,
   price: Number,
   discount: Number,
-  bgColor: String,
+  bgcolor: String,
+  panelcolor: String,
   textcolor: String,
 });
 

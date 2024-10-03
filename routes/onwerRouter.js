@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ownerModel = require("../modal/OnwerModel"); // Correct spelling of "OwnerModel"
+const ownerModel = require("../modal/OnwerModel"); 
 const OnwerModel = require("../modal/OnwerModel");
 
 if (process.env.NODE_ENV === "development") {
