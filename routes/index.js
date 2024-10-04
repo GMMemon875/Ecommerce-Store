@@ -24,17 +24,14 @@ router.get("/", function (req, res) {
 // POST request for the /post route with IsLogedIn middleware
 router.get("/shop", IsLogedIn, async function (req, res) {
   let products = await productModel.find();
-
   res.render("shop.ejs", { products });
 });
 
-// POST request for the /post route with IsLogedIn middleware
-router.get("/logout", IsLogedIn, async function (req, res) {
-  res.render("shop.ejs");
-});
+router.get("/logout", IsLogedIn, async function (req, res) {});
 
-// POST request for the /post route with IsLogedIn middleware
-router.get("/onwerlogin", IsLogedIn, async function (req, res) {
-  res.render("onwer-login.ejs");
+router.get("/onwerlogin", IsLogedIn , async function (req, res) {
+  let success = req.flash("success");
+  let error = req.flash("error");
+  res.render("onwer-login.ejs", { error, success });
 });
 module.exports = router;

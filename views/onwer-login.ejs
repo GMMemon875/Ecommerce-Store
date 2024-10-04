@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/Onwer.css" />
     <title>Document</title>
   </head>
   <body>
+    <% if (success.length > 0) { %>
+    <div class="error-message"><%= success[0] %></div>
+    <% } %> <% if (error.length > 0) { %>
+    <div class="error-message"><%= error[0] %></div>
+    <% } %>
     <div class="w-full h-screen flex px-20">
       <div class="w-1/2 flex items-center justify-center h-screen">
         <div class="w-full px-32">
           <h4 class="text-2xl capitalize mb-5">Admin Access</h4>
-          <form action="/create" method="post">
+          <form action="/onwer/create" method="post">
+            <input
+              class="block bg-zinc-100 w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
+              type="text"
+              placeholder="Onwer Name"
+              name="fullname"
+            />
             <input
               class="block bg-zinc-100 w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
               type="email"

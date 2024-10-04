@@ -15,9 +15,9 @@ router.post("/create", uploads.single("image"), async function (req, res) {
       textcolor,
       panelcolor,
     });
-    res.send(CreateProduct);
-    // req.flash("success", "Produc Create Succesfully"); // flash message is not working
-    // res.redirect("/onwer/admin");
+
+    req.flash("success", "Product Create Succesfully"); // flash message is not working
+    res.redirect("/onwer/admin");
   } catch (err) {
     res.status(500).send(err.message);
   }
