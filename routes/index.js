@@ -17,8 +17,9 @@ const productModel = require("../modal/productModel");
 
 // GET request for the homepage
 router.get("/", function (req, res) {
+  let Emailerror = req.flash("Emailerror");
   let error = req.flash("error");
-  res.render("index.ejs", { error });
+  res.render("index.ejs", { error, Emailerror });
 });
 
 // POST request for the /post route with IsLogedIn middleware
@@ -29,7 +30,7 @@ router.get("/shop", IsLogedIn, async function (req, res) {
 
 router.get("/logout", IsLogedIn, async function (req, res) {});
 
-router.get("/onwerlogin", IsLogedIn , async function (req, res) {
+router.get("/onwerlogin", IsLogedIn, async function (req, res) {
   let success = req.flash("success");
   let error = req.flash("error");
   res.render("onwer-login.ejs", { error, success });

@@ -7,9 +7,16 @@
     <title>Registration</title>
   </head>
   <body>
+    <div class="Store">
+      <span>Store</span>
+    </div>
     <% if(error.length>0){ %>
     <div class="error-message">
       <span> <%= error %> </span>
+    </div>
+    <% } %> <% if(Emailerror.length>0){ %>
+    <div class="error-message">
+      <span> <%= Emailerror %> </span>
     </div>
     <% } %>
     <div class="container">
@@ -23,18 +30,21 @@
               type="text"
               placeholder="Full Name"
               name="fullname"
+              required
             />
             <input
               class="input-field"
               type="email"
               placeholder="Email"
               name="email"
+              required
             />
             <input
               class="input-field"
               type="password"
               placeholder="Password"
               name="password"
+              required
             />
             <input
               class="submit-button"
@@ -53,12 +63,14 @@
               type="email"
               placeholder="Email"
               name="email"
+              required
             />
             <input
               class="input-field"
               type="password"
               placeholder="Password"
               name="password"
+              required
             />
             <input class="submit-button" type="submit" value="Login" />
           </form>

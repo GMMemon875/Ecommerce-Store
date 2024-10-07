@@ -1,26 +1,48 @@
-/* Container */
 .container {
   display: flex;
-  padding: 20px;
   height: 100vh;
   width: 100%;
+  gap: 10px;
 }
 
 /* Sidebar */
+
 .sidebar {
-  width: 22%;
-  display: flex;
+  width: 30%;
+  margin-left: 10px;
   flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
-.store {
-  font-size: 30px;
+.Store span {
   font-weight: bold;
   padding: 8px;
 }
+.Store {
+  display: flex;
+  justify-content: space-between;
+}
+.Store a {
+  text-decoration: none;
+  color: black;
+
+  margin: 20px;
+}
+.link {
+  margin-top: 5px;
+}
+.link span a {
+  color: red;
+}
+
 .filter {
   display: flex;
   gap: 15px;
-  margin-top: 40px;
+  margin-top: 10px;
+  padding: 10%;
 }
 
 .filter select {
@@ -29,10 +51,10 @@
   margin-top: 11px;
 }
 .navigation {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .filter-options {
-  margin-top: 40%;
+  margin-top: 15%;
 }
 
 .navigation a,
@@ -40,62 +62,61 @@
   display: block;
   text-decoration: none;
   color: inherit;
-  margin: 8px;
+  margin: 17px;
 }
 
-/* Products Section */
-.products {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Product List */
 .product-list {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
-/* Product Box */
-
-.product {
+.product-card {
   width: 200px;
-  border: 2px solid black;
-}
-
-.product-image-container {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .product-info {
+  padding: 8px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  /* background: pink; */
+  background: #f3efef;
+}
+.product-image img {
+  width: 200px;
+  height: 200px;
 }
 
-.add-button {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.product-info .price {
+  font-size: 1.2em;
+  color: #27ae60;
+}
+
+.buy-btn {
+  padding: 8px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.buy-btn:hover {
+  background-color: #2980b9;
+}
+
+.svg {
+  width: 15px;
+  height: 17px;
+  padding: 10px;
+  margin-top: 15%;
+  background: rgb(255, 255, 254);
   border-radius: 50%;
-  background-color: white;
-}
-.add-button svg {
-  width: 60%;
-  height: 60%;
+  justify-content: center;
+  align-items: center;
 }

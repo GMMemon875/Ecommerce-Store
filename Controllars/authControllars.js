@@ -8,21 +8,23 @@ module.exports.registerUser = async function (req, res) {
     const { fullname, email, password } = req.body;
 
     let findEmil = await userModel.findOne({ email: email });
-    if (findEmil) return req.flash("error", "email is already exsit");
-    const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password, salt);
+    if (findEmil) {
+      req.flash("Emailerror", "email Already exsist");
+      return res.redirect("/");
+    } else {
+      const salt = await bcrypt.genSalt(10);
+      const hash = await bcrypt.hash(password, salt);
+      let userCreated = await userModel.create({
+        fullname,
+        email,
+        password: hash,
+      });
 
-    let userCreated = await userModel.create({
-      fullname,
-      email,
-      password: hash,
-    });
-
-    let token = generateToken(userCreated);
-    res.cookie("token", token);
-    res.redirect("/shop");
+      let token = generateToken(userCreated);
+      res.cookie("token", token);
+      res.redirect("/shop");
+    }
   } catch (err) {
-    console.log(err.message);
     res.status(500).send("Server error");
   }
 };
@@ -30,7 +32,10 @@ module.exports.registerUser = async function (req, res) {
 module.exports.LoginUser = async function (req, res) {
   let { email, password } = req.body;
   let FindEmail = await userModel.findOne({ email: email });
-  if (!FindEmail) return;
+  if (!FindEmail) {
+    req.flash("error", "Email Or Password Incoreect");
+    return res.redirect("/");
+  }
   bcrypt.compare(password, FindEmail.password, function (err, result) {
     if (result === true) {
       let token = generateToken(FindEmail);
@@ -38,6 +43,7 @@ module.exports.LoginUser = async function (req, res) {
       res.redirect("/shop");
     } else {
       req.flash("error", "Email Or Password Incoreect");
+      res.redirect("/");
     }
   });
 };
