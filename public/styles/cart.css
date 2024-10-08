@@ -1,0 +1,20 @@
+.Store span {
+  font-weight: bold;
+  padding: 8px;
+}
+.Store {
+  display: flex;
+  justify-content: space-between;
+}
+.Store a {
+  text-decoration: none;
+  color: black;
+
+  margin: 20px;
+}
+.link {
+  margin-top: 5px;
+}
+.link span a {
+  color: red;
+}

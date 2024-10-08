@@ -1,3 +1,14 @@
+.error-message {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: #f56565;
+  color: white;
+  border-radius: 8px;
+}
+
 .container {
   display: flex;
   height: 100vh;

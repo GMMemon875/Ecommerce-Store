@@ -14,6 +14,7 @@ const express = require("express");
 const router = express.Router();
 const IsLogedIn = require("../middlewere/IsLogedIn");
 const productModel = require("../modal/productModel");
+const userModel = require("../modal/userModel");
 
 // GET request for the homepage
 router.get("/", function (req, res) {
@@ -25,7 +26,23 @@ router.get("/", function (req, res) {
 // POST request for the /post route with IsLogedIn middleware
 router.get("/shop", IsLogedIn, async function (req, res) {
   let products = await productModel.find();
-  res.render("shop.ejs", { products });
+  let success = req.flash("success");
+  res.render("shop.ejs", { products, success });
+});
+
+router.get("/cart", IsLogedIn, async function (req, res) {
+  let user = await userModel
+    .findOne({ email: req.user.email })
+    .populate("cart");
+  res.render("cart.ejs", { user });
+});
+
+router.get("/addtocart/:productid", IsLogedIn, async function (req, res) {
+  let user = await userModel.findOne({ email: req.user.email });
+  user.cart.push(req.params.productid);
+  await user.save();
+  req.flash("success", "Add to cart");
+  res.redirect("/shop");
 });
 
 router.get("/logout", IsLogedIn, async function (req, res) {});

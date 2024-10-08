@@ -9,11 +9,14 @@
     <title>Product Page</title>
   </head>
   <body>
+    <% if (success.length > 0) { %>
+    <div class="error-message"><%= success[0] %></div>
+    <% } %>
     <div class="Store">
       <span>Store</span>
       <div class="link">
         <a href="/shop">Shop</a>
-        <a href="">Cart</a>
+        <a href="/cart">Cart</a>
         <a href="">My Accound</a>
         <span><a href="/users/logout">Login</a> </span>
       </div>
@@ -67,7 +70,7 @@
               </div>
 
               <div class="svg">
-                <a class="add-button" href="">
+                <a class="add-button" href="/addtocart/<%= product._id %>">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
