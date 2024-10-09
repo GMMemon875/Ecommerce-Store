@@ -34,7 +34,8 @@ router.get("/cart", IsLogedIn, async function (req, res) {
   let user = await userModel
     .findOne({ email: req.user.email })
     .populate("cart");
-  res.render("cart.ejs", { user });
+  let bill = Number(user.cart[0].price) + 20 - Number(user.cart[0].discount);
+  res.render("cart.ejs", { user, bill });
 });
 
 router.get("/addtocart/:productid", IsLogedIn, async function (req, res) {
