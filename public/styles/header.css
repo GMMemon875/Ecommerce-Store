@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #343a40; /* Bootstrap's bg-dark */
+  padding: 3px 10px; /* Equivalent to py-2 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: auto; /* Maintain image aspect ratio */
+  max-width: 100%; /* Responsive */
+}
+
+.button-container {
+  display: inline-flex;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-now-button {
+  background-color: #28a745; /* Bootstrap's btn-success */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.buy-now-button:hover {
+  background-color: #218838; /* Darker green for hover effect */
+}
