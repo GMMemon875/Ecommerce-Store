@@ -11,16 +11,10 @@
   <body>
     <% if (success.length > 0) { %>
     <div class="error-message"><%= success[0] %></div>
-    <% } %> <%- include('partials/header.ejs') %>
-    <div class="Store">
-      <span>Store</span>
-      <div class="link">
-        <a href="/shop">Shop</a>
-        <a href="/cart">Cart</a>
-        <a href="">My Accound</a>
-        <span><a href="/users/logout">Login</a> </span>
-      </div>
-    </div>
+    <% } %> <%- include('partials/header.ejs') %> <%-
+    include('partials/MenuHeader.ejs') %> <%- include('partials/home.ejs') %>
+    <hr />
+
     <div class="container">
       <div class="sidebar">
         <div class="filter">
