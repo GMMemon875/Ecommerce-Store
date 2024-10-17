@@ -1,1 +1,97 @@
- 
+.hero-section {
+  padding: 50px 0; /* Padding for the section */
+  background-color: #f8f9fa; /* Light background color */
+}
+
+.text-section {
+  margin-left: 200px;
+}
+.container {
+  height: 80vh;
+}
+.fz-1 {
+  font-size: 18px; /* Font size for small text */
+  color: #333;
+}
+
+.hero-text {
+  font-size: 42px; /* Font size for hero text */
+  font-weight: bold;
+  color: #000;
+  line-height: 1.2; /* Line height for text spacing */
+}
+
+.highlight {
+  color: #ff5722; /* Highlight color */
+}
+
+.hero-subtext {
+  font-size: 16px;
+  color: #555;
+}
+
+.shop-now-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ffc107; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.row {
+  align-items: center;
+  gap: 120px;
+}
+.shop-now-btn:hover {
+  background-color: #e0a800; /* Hover effect */
+}
+.col-md-6 {
+  width: 400px;
+  height: 400px;
+}
+.hero-image {
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 36px;
+  }
+
+  .hero-subtext {
+    font-size: 14px;
+  }
+
+  .shop-now-btn {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 90%; /* Slightly reduce image size */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+  .hero-text {
+    font-size: 30px;
+  }
+
+  .hero-subtext {
+    font-size: 13px;
+  }
+
+  .shop-now-btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .hero-image {
+    width: 100%; /* Full width for mobile */
+  }
+}
