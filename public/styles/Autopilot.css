@@ -1,0 +1,80 @@
+.feature-section {
+  background-color: rgb(
+    255,
+    255,
+    255
+  ); /* Light background for feature section */
+  height: 40vh;
+}
+
+.feature-box {
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  background-color: white; /* Background color for each feature box */
+  margin-left: 10%;
+  margin-bottom: 20px; /* Space between feature boxes */
+
+  width: 100%;
+}
+
+.feature-icon {
+  max-width: 60px; /* Limit the size of the icons */
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 600; /* Bold for the title */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-text {
+  font-size: 14px;
+  color: #666;
+}
+.feature-box img {
+  margin-left: 40%;
+}
+
+/* Media Queries for Responsiveness */
+/* 
+/* Tablets */
+/* 
+@media (max-width: 768px) {
+  .feature-box {
+    padding: 15px;
+  }
+
+  .feature-title {
+    font-size: 16px;
+  }
+
+  .feature-text {
+    font-size: 13px;
+  }
+
+  .feature-icon {
+    max-width: 50px;
+  }
+}
+ */
+/* Mobile Phones */
+
+/* @media (max-width: 576px) {
+  .feature-box {
+    padding: 10px;
+  }
+
+  .feature-title {
+    font-size: 14px;
+  }
+
+  .feature-text {
+    font-size: 12px;
+  }
+
+  .feature-icon {
+    max-width: 40px;
+  }
+} */

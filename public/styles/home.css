@@ -57,41 +57,5 @@
 
 /* Media Queries for Responsiveness */
 
-/* Tablets */
-@media (max-width: 768px) {
-  .hero-text {
-    font-size: 36px;
-  }
 
-  .hero-subtext {
-    font-size: 14px;
-  }
-
-  .shop-now-btn {
-    font-size: 16px;
-  }
-
-  .hero-image {
-    width: 90%; /* Slightly reduce image size */
-  }
-}
-
-/* Mobile Phones */
-@media (max-width: 576px) {
-  .hero-text {
-    font-size: 30px;
-  }
-
-  .hero-subtext {
-    font-size: 13px;
-  }
-
-  .shop-now-btn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .hero-image {
-    width: 100%; /* Full width for mobile */
-  }
-}
+ 

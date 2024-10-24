@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles/shop.css" />
 
     <title>Product Page</title>
@@ -14,30 +14,9 @@
     <% } %> <%- include('partials/header.ejs') %> <%-
     include('partials/MenuHeader.ejs') %> <%- include('partials/home.ejs') %>
     <hr />
-
-    <div class="container">
-      <div class="sidebar">
-        <div class="filter">
-          <p>Sort by</p>
-          <form action="/shop">
-            <select name="sortby">
-              <option value="popular">Popular</option>
-              <option value="newest">Newest</option>
-            </select>
-          </form>
-        </div>
-        <div class="navigation">
-          <a href="">New Collection</a>
-          <a href="">All Products</a>
-          <a href="">Discounted Products</a>
-        </div>
-        <div class="filter-options">
-          <a href="">Filter by :</a>
-          <a href="">Availability</a>
-          <a href="">Discount</a>
-        </div>
-      </div>
-
+    <%- include('partials/Autopilot.ejs') %>
+    <hr />
+    <div class="container ">
       <div class="products">
         <div class="product-list">
           <% products.forEach(function(product){ %>

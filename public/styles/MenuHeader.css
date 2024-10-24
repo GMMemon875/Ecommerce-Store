@@ -113,30 +113,3 @@
 .quote-btn:hover {
   background-color: #e0a800;
 }
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .navbar-collapse {
-    flex-direction: column;
-    display: none;
-  }
-
-  .navbar-collapse.active {
-    display: flex;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    width: 100%;
-  }
-
-  .contact-info {
-    flex-direction: column;
-    margin-top: 15px;
-  }
-}
