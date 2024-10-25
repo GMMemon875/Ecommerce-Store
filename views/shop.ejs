@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles/shop.css" />
 
@@ -16,48 +21,7 @@
     <hr />
     <%- include('partials/Autopilot.ejs') %>
     <hr />
-    <div class="container ">
-      <div class="products">
-        <div class="product-list">
-          <% products.forEach(function(product){ %>
 
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                style="background-color: <%= product.bgcolor %>"
-                src="data:image/jpeg;base64,<%= product.image.toString('base64')%>"
-                alt="Product Image"
-              />
-            </div>
-            <div
-              class="product-info"
-              style="
-                background-color: <%= product.panelcolor %>;
-                color: <%= product.textcolor %>;
-              "
-            >
-              <div class="price_section">
-                <h3><%= product.name %></h3>
-                <p class="price">₹ <%= product.price %></p>
-                <!-- <button class="buy-btn">Buy Now</button> -->
-              </div>
-
-              <div class="svg">
-                <a class="add-button" href="/addtocart/<%= product._id %>">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path
-                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <% }) %>
-        </div>
-      </div>
-    </div>
+    <%- include('partials/shop.ejs') %>
   </body>
 </html>

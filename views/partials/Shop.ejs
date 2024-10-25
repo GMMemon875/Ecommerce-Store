@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="products">
+        <div class="product-list">
+          <% products.forEach(function(product){ %>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                style="background-color: <%= product.bgcolor %>"
+                src="data:image/jpeg;base64,<%= product.image.toString('base64')%>"
+                alt="Product Image"
+              />
+            </div>
+
+            <div
+              class="product-info"
+              style="
+                background-color: <%= product.panelcolor %>;
+                color: <%= product.textcolor %>;
+              "
+            >
+              <div class="price_section">
+                <span class="namePiza"><%= product.name %></span><br />
+
+                <!-- <button class="buy-btn">Buy Now</button> -->
+              </div>
+              <div class="add">
+                <div><span class="price">pkr <%= product.price %></span></div>
+
+                <button class="svg">
+                  <a class="add-button" href="/addtocart/<%=product._id%>">
+                    <span>+</span> add
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

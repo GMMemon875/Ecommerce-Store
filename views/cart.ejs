@@ -13,16 +13,8 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="Store">
-      <span>Store</span>
-      <div class="link">
-        <a href="/shop">Shop</a>
-        <a href="/cart">Cart</a>
-        <a href="">My Accound</a>
-        <span><a href="/users/logout">Login</a> </span>
-      </div>
-    </div>
-    <% user.cart.forEach(function(item){ %>
+    <%- include('partials/MenuHeader.ejs') %> <%
+    user.cart.forEach(function(item){ %>
     <div class="w-full h-screen flex items-start px-20 py-20 gap-10">
       <div class="w-[30%] rounded-md overflow-hidden">
         <div class="w-full h-80 bg-yellow-500">

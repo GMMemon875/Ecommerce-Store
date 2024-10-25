@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "development") {
 
 router.get("/admin", IsLogedIn, function (req, res) {
   let success = req.flash("success");
-  res.render("createProducts.ejs", { success }); 
+  res.render("createProducts.ejs", { success });
 });
 
 module.exports = router;

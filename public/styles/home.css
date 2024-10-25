@@ -6,13 +6,6 @@
 .text-section {
   margin-left: 200px;
 }
-.container {
-  height: 80vh;
-}
-.fz-1 {
-  font-size: 18px; /* Font size for small text */
-  color: #333;
-}
 
 .hero-text {
   font-size: 42px; /* Font size for hero text */
@@ -25,11 +18,6 @@
   color: #ff5722; /* Highlight color */
 }
 
-.hero-subtext {
-  font-size: 16px;
-  color: #555;
-}
-
 .shop-now-btn {
   padding: 10px 20px;
   font-size: 18px;
@@ -38,24 +26,26 @@
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-top: 4px;
+}
+.button {
+  display: block;
+  margin-top: 9px;
 }
 
 .row {
   align-items: center;
-  gap: 120px;
 }
 .shop-now-btn:hover {
   background-color: #e0a800; /* Hover effect */
 }
-.col-md-6 {
+.imagedev {
   width: 400px;
   height: 400px;
+  margin-right: 15%;
 }
 .hero-image {
   max-width: 100%; /* Make sure the image doesn't exceed its container */
 }
 
 /* Media Queries for Responsiveness */
-
-
- 
