@@ -18,3 +18,18 @@
 .link span a {
   color: red;
 }
+
+.product-section {
+  background: red;
+  width: 60%;
+  margin-left: 20%;
+  height: 450px;
+  margin-top: 4%;
+}
+.image img {
+  margin: 3%;
+  border-radius: 100px;
+}
+.price {
+  margin-right: 4%;
+}
